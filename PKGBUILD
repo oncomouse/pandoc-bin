@@ -1,5 +1,5 @@
 pkgname=pandoc-bin
-pkgver=2.11.3
+pkgver=2.11.3.2
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="http://pandoc.org"
@@ -19,8 +19,8 @@ source=(
     # The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
     "$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz"
 )
-sha256sums=('fdcd77381cd3c41aaf626f0ced64f979062e2e6080f84797278f4c143571ae3f'
-            '7ee473f2a13f914353d17877ed5a400aa1ea463bbeb66e175e771f50d0319a51')
+sha256sums=(422c1f38b4731edfafcc0f8011a8dc46ce3a84e61b896ef15e3a23e0a9b453d6
+ae94cf890c5c778c8866dfc885a1b7bfdbd0fd9bf229fcc1202f929a9d30d4d7)
 
 package() {
     cd "${srcdir}/pandoc-${pkgver}"
@@ -37,5 +37,5 @@ package() {
 
     # When pandoc stopped having templates as a submodule, they copied various github turds into their source
     # tree, so let's tidy that up...
-    rm -R ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
+    rm -Rf ${pkgdir}/usr/share/pandoc/data/templates/{.github,README.markdown}
 }
