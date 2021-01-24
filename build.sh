@@ -5,7 +5,7 @@ _usrname="jgm"
 
 mkdir tmp
 url="https://github.com/${_usrname}/${_pkgname}"
-_pkgver=$(git ls-remote --tags --sort="version:refname" https://github.com/${_usrname}/${_pkgname} | cut -d "/" -f 3 | grep "[0-9]\.[0-9]\.[0-9]" | tail -1 | sed -e "s/[^0-9.]//g" | tr -d '\n')
+_pkgver=$(git ls-remote --tags --sort="version:refname" https://github.com/${_usrname}/${_pkgname} | cut -d "/" -f 3 | grep "[0-9]\+\.[0-9]\+\.[0-9]\+" | tail -1 | sed -e "s/[^0-9.]//g" | tr -d '\n')
 # Auto generate source files:
 eval "$(grep -Pzo "(?s)source=.*?\)" PKGBUILD | sed -e "s/\([^_]\)pkgname/\1_pkgname/g" -e "s/pkgver/_pkgver/g" -e "/^[ \t]*#/d" | tr -d '\0')"
 function join_by { local d=$1; shift; local f=$1; shift; printf %s "$f" "${@/#/$d}"; }
