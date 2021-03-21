@@ -1,6 +1,6 @@
 pkgbase = pandoc-bin
 	pkgdesc = Pandoc - executable only, without 750MB Haskell depends/makedepends
-	pkgver = 2.12
+	pkgver = 2.13
 	pkgrel = 1
 	url = http://pandoc.org
 	arch = x86_64
@@ -10,10 +10,10 @@ pkgbase = pandoc-bin
 	conflicts = pandoc
 	replaces = pandoc-static
 	replaces = pandoc-lite
-	source = pandoc-bin-bin-2.12.tar.gz::https://github.com/jgm/pandoc/releases/download/2.12/pandoc-2.12-linux-amd64.tar.gz
-	source = pandoc-bin-source-2.12.tar.gz::https://github.com/jgm/pandoc/archive/2.12.tar.gz
-	sha256sums = 6d89c16f31ef4cd826133b35bbe978dd2ca7328d7b8d51fbaf2c02ca5b5553e0
-	sha256sums = 0bc749a7806ca6c30f1343a202f103fe3c9566bd99d23dfc99e97fc9cbf14777
+	source = pandoc-bin-bin-2.13.tar.gz::https://github.com/jgm/pandoc/releases/download/2.13/pandoc-2.13-linux-amd64.tar.gz
+	source = pandoc-bin-source-2.13.tar.gz::https://github.com/jgm/pandoc/archive/2.13.tar.gz
+	sha256sums = 7404aa88a6eb9fbb99d9803b80170a3a546f51959230cc529c66a2ce6b950d4c
+	sha256sums = 16ef030d25006192f77ab1bd1fa403d464fe7cfabc34e7659c1827b69437eac2
 
 pkgname = pandoc-bin
 
