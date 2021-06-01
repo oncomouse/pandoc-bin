@@ -27,3 +27,10 @@ sha256sums=$(join_by "\n" "${shasums[@]}")
 sed -e "s/sha256sums=()/sha256sums=(${sha256sums})/g" -e "s/VERSION/${_pkgver}/g" < PKGBUILD.template > PKGBUILD
 makepkg --printsrcinfo > .SRCINFO
 rm -rf tmp
+git add .
+git commit -m "$_pkgver"
+commit="$(git rev-parse HEAD)"
+git push -u
+git checkout master
+git cherry-pick "$commit"
+git push -u
